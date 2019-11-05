@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { Reset } from 'styled-reset';
+
+import StarField from './components/star-field';
+
 const App = () => {
   return (
-    <div>Hello World</div>
+    <>
+      <Reset />
+      <StarField />
+    </>
   );
 }
-
-console.log(ReactDOM);
 
 ReactDOM.render(<App />, document.getElementById('app'));

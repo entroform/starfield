@@ -1,38 +1,26 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-import {
-  Vector2,
-} from '@nekobird/rocket';
+import { StarsManager } from '../stars/stars-manager';
 
-class Star {
-  public position: Vector2;
-
-  constructor() {
-    this.position = new Vector2(0, 0);
-  }
-}
-
-class StarsManager {
-  public stars: Star[] = [];
-  public numberOfStars: number = 200;
-
-  constructor() {
-
-  }
-
-  public generateStars() {
-    this.stars = [];
-
-    for (let i = 0; i < this.numberOfStars; i++) {
-      const star = new Star();
-      this.stars[i] = star;
-    }
-  }
-}
+import Canvas from './canvas';
 
 const StarField = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const stars = new StarsManager({
+      getCanvasElement: () => canvasRef.current,
+    });
+
+    stars.start();
+
+    return () => stars.stop();
+  }, []);
+
   return (
-    <div></div>
+    <div>
+      <Canvas ref={canvasRef} />
+    </div>
   );
 }
 
