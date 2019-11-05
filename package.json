@@ -1,0 +1,41 @@
+{
+  "name": "starfield",
+  "version": "1.0.0",
+  "description": "🌠JavaScript Canvas based starfield.",
+  "homepage": "https://github.com/nekobird/starfield#readme",
+  "bugs": {
+    "url": "https://github.com/nekobird/starfield/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nekobird/starfield.git"
+  },
+  "license": "MIT",
+  "author": "Andrew Prasetya",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@nekobird/rocket": "0.0.131",
+    "polished": "^3.4.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-transition-group": "^4.3.0",
+    "styled-components": "^4.4.1",
+    "styled-system": "^5.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-polished": "^1.1.0",
+    "babel-plugin-styled-components": "^1.10.6",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}
