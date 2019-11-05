@@ -14,6 +14,7 @@
   "author": "Andrew Prasetya",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --config webpack.config.demo.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -30,10 +31,16 @@
     "@babel/core": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
+    "@babel/preset-typescript": "^7.7.0",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-polished": "^1.1.0",
     "babel-plugin-styled-components": "^1.10.6",
     "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
