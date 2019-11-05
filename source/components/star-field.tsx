@@ -18,9 +18,9 @@ const StarField = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <Canvas ref={canvasRef} />
-    </div>
+    </>
   );
 }
 

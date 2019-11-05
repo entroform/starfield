@@ -10,5 +10,14 @@ export default class Star {
     this.manager = manager;
 
     this.position = new Vector2(0, 0);
+
+    this.setInitialPosition();
+  }
+
+  public setInitialPosition() {
+    this.position.equals(
+      Math.random() * this.manager.canvasElement!.width,
+      Math.random() * this.manager.canvasElement!.height,
+    );
   }
 }

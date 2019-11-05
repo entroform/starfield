@@ -1,30 +1,36 @@
-import React, { useLayoutEffect, useRef, useCallback, Ref } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useLayoutEffect,
+  useRef,
+} from 'react';
 import { Viewport } from '@nekobird/rocket';
 
 import styled from 'styled-components';
 
 const CanvasStyled = styled.canvas`
   background-color: black;
-  height: 100vh;
-  width: 100vw;
-  max-width: 100%;
-  max-height: 100%;
   box-sizing: border-box;
+  height: 100vh;
+  left: 0;
+  max-height: 100%;
+  max-width: 100%;
   position: fixed;
   top: 0;
-  left: 0;
+  width: 100vw;
 `;
 
-const Canvas = React.forwardRef((props, ref) => {
+const Canvas = forwardRef((props, ref) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useLayoutEffect(() => {
     const resizeHandler = () => {
-      canvasRef.current!.width = Viewport.width;
-      canvasRef.current!.height = Viewport.height;
+      canvasRef.current!.width = Viewport.width * 2;
+      canvasRef.current!.height = Viewport.height * 2;
     }
 
     window.addEventListener('resize', resizeHandler);
+    resizeHandler();
 
     return () => window.removeEventListener('resize', resizeHandler);
   }, []);
