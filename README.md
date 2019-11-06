@@ -1,2 +1,2 @@
 # starfield
-🌠JavaScript Canvas based starfield.
+🌠 Starfield background in canvas.
