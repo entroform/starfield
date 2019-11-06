@@ -1,10 +1,13 @@
 import { Vector2 } from '@nekobird/rocket';
 import { StarsManager, StarsManagerConfig } from './stars-manager';
 
+export type StarType = 'STAR' | 'SOMETHING';
+
 export default class Star {
   public manager: StarsManager;
 
   public position: Vector2;
+  public type
 
   constructor(manager: StarsManager) {
     this.manager = manager;

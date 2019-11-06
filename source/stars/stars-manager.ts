@@ -36,9 +36,7 @@ export class StarsManager {
 
     this.ticker = new Repeater({
       enableTimeout: false,
-      onRepeat: (c) => {
-        this.update(c.count);
-      },
+      onRepeat: c => this.update(c.count),
     });
   }
 
@@ -71,7 +69,8 @@ export class StarsManager {
 
   public update(n) {
     if (this.context !== null) {
-      this.context.clearRect(0, 0, this.canvasElement!.width, this.canvasElement!.height);
+      this.clearCanvas();
+
       for (let i = 0; i < this.stars.length; i++) {
         const star = this.stars[i];
 
@@ -82,10 +81,21 @@ export class StarsManager {
           Math.sin((n + i) / 10) * 4,
           0, 2 * Math.PI
         );
-
         this.context.fillStyle = '#ffffff';
         this.context.fill();
       }
+    }
+  }
+
+  public clearCanvas() {
+    if (
+      this.context !== null
+      && this.canvasElement !== null
+    ) {
+      this.context.clearRect(
+        0, 0,
+        this.canvasElement.width, this.canvasElement.height
+      );
     }
   }
 
